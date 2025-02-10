@@ -134,7 +134,7 @@ app.get("/", async function(req, res){
 
 app.post("/create", async function(req, res){
     // console.log("User Input: ", req.body.todoItem);
-    const itemInfo =  await db.collection("items").insertOne({ text: req.body.todoItem });
+    const itemInfo =  await db.collection("items").insertOne({ text: req.body.text });
 
     res.json({_id: itemInfo.insertedId, text: req.body.text});
 
